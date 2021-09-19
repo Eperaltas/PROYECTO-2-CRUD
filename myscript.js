@@ -102,3 +102,4 @@ function filterTodo(e) {
 
 console.log('Welcome Coach, '+ localStorage.getItem('Edgar Peralta'));
 console.log(saveInLocalStorage);
+
