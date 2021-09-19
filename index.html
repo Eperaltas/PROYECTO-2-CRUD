@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  Hello
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="mymain.css" />
+    <title>Proyecto 2 To Do List-CRUD</title>
+  </head>
+
+  <body>
+    <!-- TÍTULO -->
+    <header>
+      <h1>TASKS TO BE DONE</h1>
+    </header>
+
+    <!-- CAMPO DE ENTRADA PARA ENTRAR A UNA TAREA Y FILTRO DESPLEGABLE-->
+    <form>
+      <input type="text" placeholder="Enter the task" class="todo_input" />
+      <button class="todo_button" type="submit">
+        <i class="fas fa-plus-square"></i>
+      </button>
+      <div class="select">
+        <select name="todos" class="filter_todo">
+          <option value="all">ALL</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
+
+    <!-- CONTENEDOR PARA MOSTRAR LA LISTA DE TAREAS POR AÑADIR TAREAS DINÁMICAMENTE UTILIZANDO JAVASCRIPT-->
+    <div class="todo_container">
+      <ul class="todo_list"></ul>
+    </div>
+    <!--  AGREGAR JAVASCRIPT-->
+    <script src="myscript.js"></script>
+  </body>
 </html>
