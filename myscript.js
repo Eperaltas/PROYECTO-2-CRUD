@@ -10,7 +10,7 @@ function saveInLocalStorage() {
 //EVENT LISTENERS
 todoButton.addEventListener("click", addTodo)
 todoList.addEventListener("click", deleteCheck)
-filterOption.addEventListener("click", filterTodo)
+//filterOption.addEventListener("click", filterTodo)
 //FUNCTIONS
 function addTodo(event) {
   event.preventDefault();
@@ -34,10 +34,11 @@ function addTodo(event) {
   deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
   deleteButton.classList.add('delete_btn')
   todoDiv.appendChild(deleteButton);
-  //UPDATE TASK
-
-  //EDIT TASK
-
+  //UPDATE-EDIT TASK
+  const editButton = document.createElement('button');
+  editButton.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+  editButton.classList.add('edit_btn')
+  todoDiv.appendChild(editButton);
   //APPEND TO ACTUAL LIST
   todoList.appendChild(todoDiv);
   //CLEAR todo input VALUE
@@ -46,9 +47,11 @@ function addTodo(event) {
 
 //DELETE & CHECK
 function deleteCheck(e) {
+  console.log("Hello")
   const item = e.target;
   //DELETE ITEM
   if (item.classList[0] === "delete_btn") {
+    console.log(1) //PARA VER QUE SI ENTRA BIEN
     const todo = item.parentElement;
     //ANIMATION TRANSITION
     todo.classList.add("fall")
@@ -60,6 +63,15 @@ function deleteCheck(e) {
   if (item.classList[0] === "complete_btn") {
     const todo = item.parentElement;
     todo.classList.toggle("completedItem")
+  }
+  //EDIT ITEM
+  if (item.classList[0] === "edit_btn") {
+    const todo = item.parentElement;
+    console.log(todo)
+    //const probando = document.querySelector('.todo_input');
+    //probando.text("Hello")
+
+    //todo.classList.toggle("completedItem")
   }
 }
 //FILTERING TASKS ACCORDING THE OPTION
